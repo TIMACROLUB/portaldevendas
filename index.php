@@ -1,6 +1,6 @@
 <?php include "pages/header.php" ?>
     <title>Portal de Vendas - DashBoard</title>
-    <script src='js/sessionControl.js'></script>
+    <!--<script src='js/sessionControl.js'></script>-->
 </head>
 
 <body id="page-top">
@@ -37,6 +37,14 @@
 
                     <!-- Content Row -->
                     <div class="row justify-content-center" id='autoGestaoSupervisor' hidden>
+                        <div class='col-xl-6 mb-4'>
+                            <div class='content card card-body shadow element'>
+                                <h6 class="font-weight-bold text-primary">Pedidos gerados por dia (Antes e Depois de 12horas)</h6>
+                                <div id="col">
+                                    <canvas id="pedidos-gerados"></canvas>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-xl-6 mb-4">
                             <div class="card card-body shadow element">
                                 <h6 class='font-weight-bold text-primary'>Auto Gestão diaria - Supervisores</h6>
@@ -318,14 +326,6 @@
                                     </form>
                                 </div>
                                 <div id="pedidos"></div>
-                            </div>
-                        </div>
-                        <div class='col-xl-6 mb-4'>
-                            <div class='content card card-body shadow element'>
-                                <h6 class="font-weight-bold text-primary">Pedidos gerados por dia (Antes e Depois de 12horas)</h6>
-                                <div id="col">
-                                    <canvas id="pedidos-gerados"></canvas>
-                                </div>
                             </div>
                         </div>
                     </div>
