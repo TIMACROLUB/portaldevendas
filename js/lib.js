@@ -1,7 +1,7 @@
-//let url = "https://api.macrolub.com.br:2087";
+let url = "https://api.macrolub.com.br:2087";
 let interval;
 //let url = "https://apisec.moraiscasa.dev.br:2083"
-let url = "http://localhost:3031"
+//let url = "http://localhost:3031"
 
 class Usuario {
     constructor(){
