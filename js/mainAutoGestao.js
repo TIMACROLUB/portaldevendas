@@ -563,14 +563,14 @@ function atualizaDados(){
         const dataset = [{
           label: 'Pedidos até as 12 horas',
           data: pedidosGerados.map((pedido)=>pedido.QTPEDIDOSAM),
-          borderColor: Utils.CHART_COLOR.red,
-          backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5)
+          borderColor: '#FF6384',
+          backgroundColor: Utils.transparentize('#FF6384', 0.5)
         },
         {
           label: 'Pedidos após as 12 horas',
           data: pedidosGerados.map((pedido)=>pedido.QTPEDIDOSPM),
-          borderColor: Utils.CHART_COLOR.blue,
-          backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5)
+          borderColor: '#36A2EB',
+          backgroundColor: Utils.transparentize('#36A2EB', 0.5)
         }]; 
         new chartJs(graphCanvas, 'line', dataset, datasetLabels);
     },

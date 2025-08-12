@@ -1,6 +1,6 @@
 <?php include "pages/header.php" ?>
     <title>Portal de Vendas - DashBoard</title>
-    <!--<script src='js/sessionControl.js'></script>-->
+    <script src='js/sessionControl.js'></script>
 </head>
 
 <body id="page-top">
@@ -350,6 +350,8 @@
     <script src='js/themeControl.js'></script>
     <script src="js/skeletonControl.js"></script>
     <script src="js/sb-admin-2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="js/chart.js"></script>
     <script src='js/mainAutoGestao.js'></script>
     <script src="js/consultarStatusPedido.js"></script>
