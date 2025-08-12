@@ -1,0 +1,22 @@
+name: 🚀 Deploy Automático para Hostinger via FTP
+
+on:
+  push:
+    branches:
+      - main  # ou sua branch desejada
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Deploy via FTP para Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_DESTINATION }}
+          local-dir: ./  # Pasta onde estão seus arquivos index.html etc.
