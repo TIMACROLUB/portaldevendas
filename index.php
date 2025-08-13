@@ -37,14 +37,6 @@
 
                     <!-- Content Row -->
                     <div class="row justify-content-center" id='autoGestaoSupervisor' hidden>
-                        <div class='col-xl-6 mb-4'>
-                            <div class='content card card-body shadow element'>
-                                <h6 class="font-weight-bold text-primary">Pedidos gerados por dia (Antes e Depois de 12horas)</h6>
-                                <div id="col">
-                                    <canvas id="pedidos-gerados"></canvas>
-                                </div>
-                            </div>
-                        </div>
                         <div class="col-xl-6 mb-4">
                             <div class="card card-body shadow element">
                                 <h6 class='font-weight-bold text-primary'>Auto Gestão diaria - Supervisores</h6>
@@ -90,6 +82,16 @@
                                     <div class="col-auto">
                                         <i class="fa-solid fa-calendar-days fa-2x"></i>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class='col-xl-6 mb-4'>
+                            <div class='content card card-body shadow element'>
+                                <h6 class="font-weight-bold text-primary">Pedidos gerados por dia (Antes e Depois de 12horas)</h6>
+                                <div id="col">
+                                    <canvas id="pedidos-gerados"></canvas>
                                 </div>
                             </div>
                         </div>
