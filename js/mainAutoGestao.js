@@ -564,13 +564,13 @@ function atualizaDados(){
           label: 'Pedidos até as 12 horas',
           data: pedidosGerados.map((pedido)=>pedido.QTPEDIDOSAM),
           borderColor: '#FF6384',
-          backgroundColor: Utils.transparentize('#FF6384', 0.5)
+          backgroundColor: 'rgba(255,99,132,0.9)'
         },
         {
           label: 'Pedidos após as 12 horas',
           data: pedidosGerados.map((pedido)=>pedido.QTPEDIDOSPM),
           borderColor: '#36A2EB',
-          backgroundColor: Utils.transparentize('#36A2EB', 0.5)
+          backgroundColor: 'rgba(54,162,235,0.9)'
         }]; 
         new chartJs(graphCanvas, 'line', dataset, datasetLabels);
     },
