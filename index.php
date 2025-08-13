@@ -87,7 +87,7 @@
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class='col-xl-6 mb-4'>
+                        <div class='col mb-4'>
                             <div class='content card card-body shadow element'>
                                 <h6 class="font-weight-bold text-primary">Pedidos gerados por dia (Antes e Depois de 12horas)</h6>
                                 <div id="col">
