@@ -86,7 +86,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row justify-content-center">
+                    <div hidden class="row justify-content-center" id="row-grafico-pedidos-dia">
                         <div class='col mb-4'>
                             <div class='content card card-body shadow element'>
                                 <h6 class="font-weight-bold text-primary">Pedidos gerados por dia (Antes e Depois de 12horas)</h6>
