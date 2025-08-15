@@ -181,6 +181,33 @@ function atualizaDados(){
           console.error(err);
         }
     );
+
+    if(tipoPerfil === 'S' || tipoPerfil === 'G') {
+        newReqAjax('get','pedidosgerados', 'json', undefined,
+            (pedidosGerados)=>{
+                const graphCanvas = html.get('#pedidos-gerados');
+                const datasetLabels = pedidosGerados.map(pedido=>pedido.DATA);
+                const dataset = [{
+                    label: 'Pedidos até as 12 horas',
+                    data: pedidosGerados.map((pedido)=>pedido.QTPEDIDOSAM),
+                    borderColor: '#FF6384',
+                    backgroundColor: 'rgba(255,99,132,0.9)'
+                },
+                {
+                    label: 'Pedidos após as 12 horas',
+                    data: pedidosGerados.map((pedido)=>pedido.QTPEDIDOSPM),
+                    borderColor: '#36A2EB',
+                    backgroundColor: 'rgba(54,162,235,0.9)'
+                }];
+                new chartJs(graphCanvas, 'line', dataset, datasetLabels);
+                const graphContainer = html.get('#row-grafico-pedidos-dia')
+                graphContainer.removeAttribute('hidden');
+            },
+            (err)=>{
+              console.error(err);
+            }
+        );
+    }
   }
 
   //Busca resultado do Mes de Auto Gestao do RCA
