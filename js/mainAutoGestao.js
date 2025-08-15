@@ -162,9 +162,7 @@ function atualizaDados(){
   if(tipoPerfil === 'S' || tipoPerfil === 'G') {
         newReqAjax('get','pedidosgerados', 'json', undefined,
             (pedidosGerados)=>{
-                const graphContainer = html.get('#row-grafico-pedidos-dia')
-                graphContainer.removeAttribute('hidden');
-                console.log(graphContainer);
+                html.get('#graphContainer').removeAttribute('hidden');
                 const graphCanvas = html.get('#pedidos-gerados');
                 const datasetLabels = pedidosGerados.map(pedido=>pedido.DATA);
                 const dataset = [{
