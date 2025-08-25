@@ -32,7 +32,9 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-
+                <audio id="bell">
+                    <source src="public/Sirene.mp3" type="audio/mpeg"/>
+                </audio>
                 <div class="container-fluid element">
 
                     <!-- Content Row -->

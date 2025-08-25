@@ -12,7 +12,9 @@
         <!-- Sidebar -->
         <?php include "pages/menu.php" ?>
         <!-- End of Sidebar -->
-
+        <audio id="bell">
+            <source src="public/Sirene.mp3" type="audio/mpeg"/>
+        </audio>
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 

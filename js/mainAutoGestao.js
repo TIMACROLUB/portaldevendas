@@ -220,6 +220,10 @@ function atualizaDados(){
     skeleton.removeSkeleton(label)
     label.innerText = `${percentualMeta.PERCENTUALMETAHOJEACUMULADO} %`
     setStatusColor(label,100,percentualMeta.PERCENTUALMETAHOJEACUMULADO)
+
+    if(percentualMeta.PERCENTUALMETAHOJE >= 100) {
+        document.getElementById('bell').play();
+    }
   })
 
   //Busca resultado do % Realizado da Meta de Vendas
