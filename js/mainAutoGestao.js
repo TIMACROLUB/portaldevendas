@@ -223,6 +223,22 @@ function atualizaDados(){
 
     if(percentualMeta.PERCENTUALMETAHOJE >= 100) {
         document.getElementById('bell').play();
+
+        if (Notification.permission === "granted") {
+            new Notification("🎉 Meta atingida!", {
+                body: `O vendedor alcançou ${suc.percentualacumulado.PERCENTUALMETA}% da meta geral ou ${suc.percentualhoje.PERCENTUALMETA}% da meta do dia.`,
+                icon: "icone.png" // opcional
+            });
+        } else if (Notification.permission !== "denied") {
+            Notification.requestPermission().then(permission => {
+                if (permission === "granted") {
+                    new Notification("🎉 Meta atingida!", {
+                        body: `O vendedor alcançou ${suc.percentualacumulado.PERCENTUALMETA}% da meta geral ou ${suc.percentualhoje.PERCENTUALMETA}% da meta do dia.`,
+                        icon: "icone.png"
+                    });
+                }
+            });
+        }
     }
   })
 
@@ -236,6 +252,22 @@ function atualizaDados(){
 
       if(percentualMeta.PERCENTUALMETA >= 100) {
         document.getElementById('bell').play();
+
+          if (Notification.permission === "granted") {
+              new Notification("🎉 Meta atingida!", {
+                  body: `O vendedor alcançou ${suc.percentualacumulado.PERCENTUALMETA}% da meta geral ou ${suc.percentualhoje.PERCENTUALMETA}% da meta do dia.`,
+                  icon: "icone.png" // opcional
+              });
+          } else if (Notification.permission !== "denied") {
+              Notification.requestPermission().then(permission => {
+                  if (permission === "granted") {
+                      new Notification("🎉 Meta atingida!", {
+                          body: `O vendedor alcançou ${suc.percentualacumulado.PERCENTUALMETA}% da meta geral ou ${suc.percentualhoje.PERCENTUALMETA}% da meta do dia.`,
+                          icon: "icone.png"
+                      });
+                  }
+              });
+          }
       }
       // `${Math.round((( percentualMeta[0].PERCENTUALMETA ) + Number.EPSILON) * 100) /100} %`
     }

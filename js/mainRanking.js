@@ -289,6 +289,22 @@ function atualizaRanking(){
 
         if(suc.percentualacumulado.PERCENTUALMETA >= 100 || suc.percentualhoje.PERCENTUALMETA >= 100) {
             document.getElementById('bell').play();
+
+            if (Notification.permission === "granted") {
+                new Notification("🎉 Meta atingida!", {
+                    body: `O vendedor alcançou ${suc.percentualacumulado.PERCENTUALMETA}% da meta geral ou ${suc.percentualhoje.PERCENTUALMETA}% da meta do dia.`,
+                    icon: "icone.png" // opcional
+                });
+            } else if (Notification.permission !== "denied") {
+                Notification.requestPermission().then(permission => {
+                    if (permission === "granted") {
+                        new Notification("🎉 Meta atingida!", {
+                            body: `O vendedor alcançou ${suc.percentualacumulado.PERCENTUALMETA}% da meta geral ou ${suc.percentualhoje.PERCENTUALMETA}% da meta do dia.`,
+                            icon: "icone.png"
+                        });
+                    }
+                });
+            }
         }
 
     })
