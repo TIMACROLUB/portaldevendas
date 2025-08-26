@@ -629,6 +629,12 @@ function atualizaDados(){
 
 //se tentar entrar no index.html sem estar logado volta para tela login
 window.addEventListener("DOMContentLoaded", function(event) {
+  if (Notification.permission !== "granted" && Notification.permission !== "denied") {
+    Notification.requestPermission().then(permission => {
+        console.log("Permissão de notificação:", permission);
+    });
+  }
+
   skeleton.generateSkeleton(html.get('#orcamentos'),3,['small','textH6','text'],['text'])
   skeleton.generateSkeleton(html.get('#tableInadimplencia'),4,['small','text'],['textH6'])
   skeleton.generateSkeleton(html.get('#devolucoesComerciais'),3,['small','textH6','text'],['textH6'])

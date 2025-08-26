@@ -337,7 +337,13 @@ function atualizaRanking(){
 }
 
 window.addEventListener('DOMContentLoaded',event =>{
-    
+    if (Notification.permission !== "granted" && Notification.permission !== "denied") {
+        Notification.requestPermission().then(permission => {
+            console.log("Permissão de notificação:", permission);
+        });
+    }
+
+
     html.get('.switch-mode.ranking-palhetas').addEventListener('click',e=>{
         periodoPalhetas = switchOption(html.get('.switch-mode.ranking-palhetas'))
         rankingPalhetas(periodoPalhetas)
