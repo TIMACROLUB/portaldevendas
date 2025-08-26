@@ -287,7 +287,7 @@ function atualizaRanking(){
         setStatusColor(metaHoje, 100, suc.percentualhoje.PERCENTUALMETA)
         metaHoje.innerText = `${suc.percentualhoje.PERCENTUALMETA} %`
 
-        if(suc.percentualacumulado.PERCENTUALMETA >= 100) {
+        if(suc.percentualacumulado.PERCENTUALMETA >= 100 || suc.percentualhoje.PERCENTUALMETA >= 100) {
             document.getElementById('bell').play();
         }
 

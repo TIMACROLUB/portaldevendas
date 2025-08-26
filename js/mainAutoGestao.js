@@ -233,6 +233,10 @@ function atualizaDados(){
       skeleton.removeSkeleton(label)
       label.innerText = `${percentualMeta.PERCENTUALMETA} %`
       setStatusColor(label,100,percentualMeta.PERCENTUALMETA)
+
+      if(percentualMeta.PERCENTUALMETA >= 100) {
+        document.getElementById('bell').play();
+      }
       // `${Math.round((( percentualMeta[0].PERCENTUALMETA ) + Number.EPSILON) * 100) /100} %`
     }
   )
