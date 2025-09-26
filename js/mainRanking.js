@@ -43,12 +43,15 @@ function rankingPalhetas(periodo){
                         const colIconeResultado = html.create('div')
                         colIconeResultado.setAttribute('class','col-auto')
                             const iconeResultado = html.create('i')
-                            if(parseInt(data.PERCENTUALMETAHOJE) < 80){
+
+                            const metaNormalizada = data.PERCENTUALMETAHOJE.replace(/\./g, '').replace(',', '.')
+                            const inteiro = Math.floor(parseFloat(metaNormalizada));
+                            if(inteiro < 80){
                                 iconeResultado.setAttribute('class','fa-solid fa-circle-xmark fa-2x text-danger')
-                            } else if (parseInt(data.PERCENTUALMETAHOJE) < 100){
+                            } else if (inteiro < 100){
                                 iconeResultado.style.color = '#f3820a'
                                 iconeResultado.setAttribute('class','fa-solid fa-circle-exclamation fa-2x')
-                            } else if (parseInt(data.PERCENTUALMETAHOJE) >= 100){
+                            } else if (inteiro >= 100){
                                 iconeResultado.setAttribute('class','fa-solid fa-circle-check fa-2x text-success')
                             }
     
@@ -104,15 +107,18 @@ function rankingPalhetas(periodo){
                             h5Realizado.innerHTML = `${data.PERCENTUALMETAHOJE} %`
                         const colIconeResultado = html.create('div')
                         colIconeResultado.setAttribute('class','col-auto')
-                            const iconeResultado = html.create('i')
-                            if(parseInt(data.PERCENTUALMETAHOJE) < 80){
-                                iconeResultado.setAttribute('class','fa-solid fa-circle-xmark fa-2x text-danger')
-                            } else if (parseInt(data.PERCENTUALMETAHOJE) < 100){
-                                iconeResultado.style.color = '#f3820a'
-                                iconeResultado.setAttribute('class','fa-solid fa-circle-exclamation fa-2x')
-                            } else if (parseInt(data.PERCENTUALMETAHOJE) >= 100){
-                                iconeResultado.setAttribute('class','fa-solid fa-circle-check fa-2x text-success')
-                            }
+                        const iconeResultado = html.create('i')
+
+                        const metaNormalizada = data.PERCENTUALMETAHOJE.replace(/\./g, '').replace(',', '.')
+                        const inteiro = Math.floor(parseFloat(metaNormalizada));
+                        if(inteiro < 80){
+                            iconeResultado.setAttribute('class','fa-solid fa-circle-xmark fa-2x text-danger')
+                        } else if (inteiro < 100){
+                            iconeResultado.style.color = '#f3820a'
+                            iconeResultado.setAttribute('class','fa-solid fa-circle-exclamation fa-2x')
+                        } else if (inteiro >= 100){
+                            iconeResultado.setAttribute('class','fa-solid fa-circle-check fa-2x text-success')
+                        }
     
                         colIconeResultado.appendChild(iconeResultado)
                         colRealizado.appendChild(h5Realizado)
@@ -174,12 +180,12 @@ function rankingGeral(periodo){
                     const colIconeResultado = html.create('div')
                     colIconeResultado.setAttribute('class','col-auto')
                         const iconeResultado = html.create('i')
-                        if(parseInt(data.PERCENTUALMETAHOJE) < 80){
+                        if(inteiro < 80){
                             iconeResultado.setAttribute('class','fa-solid fa-circle-xmark fa-2x text-danger')
-                        } else if (parseInt(data.PERCENTUALMETAHOJE) < 100){
+                        } else if (inteiro < 100){
                             iconeResultado.style.color = '#f3820a'
                             iconeResultado.setAttribute('class','fa-solid fa-circle-exclamation fa-2x')
-                        } else if (parseInt(data.PERCENTUALMETAHOJE) >= 100){
+                        } else if (inteiro >= 100){
                             iconeResultado.setAttribute('class','fa-solid fa-circle-check fa-2x text-success')
                         }
 
@@ -240,12 +246,12 @@ function rankingGeral(periodo){
                     const colIconeResultado = html.create('div')
                     colIconeResultado.setAttribute('class','col-auto')
                         const iconeResultado = html.create('i')
-                        if(parseInt(data.PERCENTUALMETAHOJE) < 80){
+                        if(inteiro < 80){
                             iconeResultado.setAttribute('class','fa-solid fa-circle-xmark fa-2x text-danger')
-                        } else if (parseInt(data.PERCENTUALMETAHOJE) < 100){
+                        } else if (inteiro < 100){
                             iconeResultado.style.color = '#f3820a'
                             iconeResultado.setAttribute('class','fa-solid fa-circle-exclamation fa-2x')
-                        } else if (parseInt(data.PERCENTUALMETAHOJE) >= 100){
+                        } else if (inteiro >= 100){
                             iconeResultado.setAttribute('class','fa-solid fa-circle-check fa-2x text-success')
                         }
 
@@ -288,7 +294,7 @@ function atualizaRanking(){
         metaHoje.innerText = `${suc.percentualhoje.PERCENTUALMETA} %`
 
         if(suc.percentualacumulado.PERCENTUALMETA >= 100 || suc.percentualhoje.PERCENTUALMETA >= 100) {
-            document.getElementById('bell').play();
+            /*document.getElementById('bell').play();*/
 
             if (Notification.permission === "granted") {
                 new Notification("🎉 Meta atingida!", {
@@ -342,7 +348,6 @@ window.addEventListener('DOMContentLoaded',event =>{
             console.log("Permissão de notificação:", permission);
         });
     }
-
 
     html.get('.switch-mode.ranking-palhetas').addEventListener('click',e=>{
         periodoPalhetas = switchOption(html.get('.switch-mode.ranking-palhetas'))

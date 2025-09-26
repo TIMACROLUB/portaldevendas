@@ -222,7 +222,7 @@ function atualizaDados(){
     setStatusColor(label,100,percentualMeta.PERCENTUALMETAHOJEACUMULADO)
 
     if(percentualMeta.PERCENTUALMETAHOJE >= 100) {
-        document.getElementById('bell').play();
+        /*document.getElementById('bell').play();*/
 
         if (Notification.permission === "granted") {
             new Notification("🎉 Meta atingida!", {
