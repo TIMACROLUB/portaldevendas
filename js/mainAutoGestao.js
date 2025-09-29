@@ -251,7 +251,7 @@ function atualizaDados(){
       setStatusColor(label,100,percentualMeta.PERCENTUALMETA)
 
       if(percentualMeta.PERCENTUALMETA >= 100) {
-        document.getElementById('bell').play();
+        /*document.getElementById('bell').play();*/
 
           if (Notification.permission === "granted") {
               new Notification("🎉 Meta atingida!", {

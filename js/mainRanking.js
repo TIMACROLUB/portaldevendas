@@ -180,6 +180,9 @@ function rankingGeral(periodo){
                     const colIconeResultado = html.create('div')
                     colIconeResultado.setAttribute('class','col-auto')
                         const iconeResultado = html.create('i')
+
+                        const metaNormalizada = data.PERCENTUALMETAHOJE.replace(/\./g, '').replace(',', '.')
+                        const inteiro = Math.floor(parseFloat(metaNormalizada));
                         if(inteiro < 80){
                             iconeResultado.setAttribute('class','fa-solid fa-circle-xmark fa-2x text-danger')
                         } else if (inteiro < 100){
@@ -246,6 +249,9 @@ function rankingGeral(periodo){
                     const colIconeResultado = html.create('div')
                     colIconeResultado.setAttribute('class','col-auto')
                         const iconeResultado = html.create('i')
+
+                    const metaNormalizada = data.PERCENTUALMETAHOJE.replace(/\./g, '').replace(',', '.')
+                    const inteiro = Math.floor(parseFloat(metaNormalizada));
                         if(inteiro < 80){
                             iconeResultado.setAttribute('class','fa-solid fa-circle-xmark fa-2x text-danger')
                         } else if (inteiro < 100){
