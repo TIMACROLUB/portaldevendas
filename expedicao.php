@@ -42,6 +42,7 @@
                                             <select name="filial" id="filial" class="form-select form-control">
                                                 <option value="ES" class='select-option'selected>ES</option>
                                                 <option value="MG" class='select-option'>MG</option>
+                                                <option value="GO" class='select-option'>GO</option>
                                             </select>
                                         </div>
                                     </div>
