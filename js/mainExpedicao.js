@@ -69,10 +69,10 @@ btnHoraCorte.onchange = (event)=>{
 
 inputFilial.addEventListener('change',e=>{
     const rankingWMS = html.get('#rowRanking')
-    if(e.currentTarget.value === 'MG' && rankingWMS.style.display !== 'none'){
-        rankingWMS.style.display = 'none'
-    }else if(rankingWMS.style.display === 'none'){
+    if(e.currentTarget.value === 'ES' && rankingWMS.style.display === 'none'){
         rankingWMS.style.display = 'flex'
+    }else {
+        rankingWMS.style.display = 'none'
     }
 
     skeleton.activeSkeleton()
